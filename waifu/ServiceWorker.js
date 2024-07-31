@@ -2,8 +2,8 @@ const cacheName = "Mirailabs-Waifu Tap-1.0.0";
 const contentToCache = [
     "Build/Build.loader.js",
     "Build/e3990134963a217655419d7a99280482.js.unityweb",
-    "Build/a25a04949ba4c7b787bd33d937c6f690.data.unityweb",
-    "Build/a5a8457472cc1458586d4a10a46ad14b.wasm.unityweb",
+    "Build/ce1528cd657f3266ed6fc651f752f6e0.data.unityweb",
+    "Build/412adc410c9bf7d3bbdac32a516f69c6.wasm.unityweb",
     "TemplateData/style.css"
 
 ];
