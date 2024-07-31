@@ -1,7 +1,7 @@
 var buildUrl = "Build";
 var loaderUrl = buildUrl + "/Build.loader.js?0";
 var config = {
-    dataUrl: buildUrl + "/595b4b53c10e3f765fd19f25d43e55da.data.unityweb?0",
+    dataUrl: buildUrl + "/99d4d0e9e7ad3dd9a15deca0c8cd9530.data.unityweb?0",
     frameworkUrl: buildUrl + "/e3990134963a217655419d7a99280482.js.unityweb?0",
     codeUrl: buildUrl + "/412adc410c9bf7d3bbdac32a516f69c6.wasm.unityweb?0",
     streamingAssetsUrl: "StreamingAssets",
