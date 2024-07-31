@@ -1,103 +1,75 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Waifu Tap</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-    <link rel="manifest" href="manifest.webmanifest">
-  </head>
-  <body>
-    <div id="unity-container">
-      <canvas id="unity-canvas" width=1080 height=1920 tabindex="-1"></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
-        </div>
-      </div>
-      <div id="unity-warning"> </div>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waifu Tap</title>
+  <link rel="stylesheet" href="styles.1487920943.css">
+  <script src="https://tganalytics.xyz/index.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <div id="unity-container">
+    <canvas id="unity-canvas"></canvas>
+  </div>
+  <div id="unity-loading-container">
+    <!-- <img src="logo.png" class="logo" alt="Logo Mirailabs"> -->
+    <div id="unity-loading-bar">
+      <div id="unity-loading-bar-inner"></div>
     </div>
-    <script>
-      window.addEventListener("load", function () {
-        if ("serviceWorker" in navigator) {
-          navigator.serviceWorker.register("ServiceWorker.js");
-        }
-      });
+  </div>
+  <!-- Google tag (gtag.js) -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-7YXRJ2WSVP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-      var container = document.querySelector("#unity-container");
-      var canvas = document.querySelector("#unity-canvas");
-      var loadingBar = document.querySelector("#unity-loading-bar");
-      var progressBarFull = document.querySelector("#unity-progress-bar-full");
-      var warningBanner = document.querySelector("#unity-warning");
+    gtag('config', 'G-7YXRJ2WSVP');
+  </script> -->
 
-      // Shows a temporary message banner/ribbon for a few seconds, or
-      // a permanent error message on top of the canvas if type=='error'.
-      // If type=='warning', a yellow highlight color is used.
-      // Modify or remove this function to customize the visually presented
-      // way that non-critical warnings and error messages are presented to the
-      // user.
-      function unityShowBanner(msg, type) {
-        function updateBannerVisibility() {
-          warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
-        }
-        var div = document.createElement('div');
-        div.innerHTML = msg;
-        warningBanner.appendChild(div);
-        if (type == 'error') div.style = 'background: red; padding: 10px;';
-        else {
-          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-          setTimeout(function() {
-            warningBanner.removeChild(div);
-            updateBannerVisibility();
-          }, 5000);
-        }
-        updateBannerVisibility();
+  </script>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script>
+    // Initialize Telegram Analytics SDK
+    // window.telegramAnalytics.init({
+    //   token: 'eyJhcHBfbmFtZSI6Im1lcmdlcGFscyIsImFwcF91cmwiOiJodHRwczovL3QubWUvbWVyZ2VwYWxzYm90IiwiYXBwX2RvbWFpbiI6Imh0dHBzOi8vY2xpZW50Lm1lcmdlcGFscy5pby8ifQ==!vDMuYjbS+liH33iBK6J+K+oc0LFCoT/nhhVZDo8IZqk=',
+    //   appName: 'mergepals',
+    // });
+
+    alert = function (message) { console.log(`ALERT ${message}`); };
+    Telegram.WebApp.onEvent("viewportChanged", isStateStable => {
+      if (isStateStable) {
+        disableScrollDown();
       }
+    });
 
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Build.loader.js";
-      var config = {
-        dataUrl: buildUrl + "/ce1528cd657f3266ed6fc651f752f6e0.data.unityweb",
-        frameworkUrl: buildUrl + "/e3990134963a217655419d7a99280482.js.unityweb",
-        codeUrl: buildUrl + "/412adc410c9bf7d3bbdac32a516f69c6.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "Mirailabs",
-        productName: "Waifu Tap",
-        productVersion: "1.0.0",
-        showBanner: unityShowBanner,
-      };
+    Telegram.WebApp.ready();
+    Telegram.WebApp.expand();
+    Telegram.WebApp.enableClosingConfirmation();
 
-      // By default Unity keeps WebGL canvas render target size matched with
-      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-      // Set this to false if you want to decouple this synchronization from
-      // happening inside the engine, and you would instead like to size up
-      // the canvas DOM size and WebGL render target sizes yourself.
-      // config.matchWebGLToCanvasSize = false;
+    function disableScrollDown() {
+      const overflow = 2;
 
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
-      }
+      document.body.style.overflowY = 'hidden';
+      document.body.style.marginTop = `${overflow}px`;
+      document.body.style.height = window.innerHeight + overflow + "px";
+      document.body.style.paddingBottom = `${overflow}px`;
+      window.scrollTo(0, overflow);
 
-      loadingBar.style.display = "block";
+      let ts = 0;
+      const onTouchStart = (e) => { ts = e.touches[0].clientY; };
+      const onTouchMove = (e) => { e.preventDefault(); };
 
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
-          loadingBar.style.display = "none";
-        }).catch((message) => {
-          alert(message);
-        });
-      };
-      document.body.appendChild(script);
-    </script>
-  </body>
+      document.documentElement.addEventListener('touchstart', onTouchStart, { passive: false });
+      document.documentElement.addEventListener('touchmove', onTouchMove, { passive: false });
+    }
+  </script>
+  <script src="https://unpkg.com/tonweb@0.0.41/dist/tonweb.js"></script>
+  <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
+  <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
+  <script src="script.js?638580333985984280"></script>
+</body>
+
 </html>
