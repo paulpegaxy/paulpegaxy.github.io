@@ -1,9 +1,9 @@
 var buildUrl = "Build";
-var loaderUrl = buildUrl + "/development.loader.js?638581291058247579";
+var loaderUrl = buildUrl + "/development.loader.js?638581302338048952";
 var config = {
-    dataUrl: buildUrl + "/113bf5ed8f0a7f6f2ef71f972a905e9a.data.unityweb?638581291058247579",
-    frameworkUrl: buildUrl + "/875237142bb9769733898a0d48cc91f5.js.unityweb?638581291058247579",
-    codeUrl: buildUrl + "/26c2ae47aea3b5347c7bde87cc1b789a.wasm.unityweb?638581291058247579",
+    dataUrl: buildUrl + "/310b572c0034648dd178f7c2790dea4d.data.unityweb?638581302338048952",
+    frameworkUrl: buildUrl + "/86e852c7a0a4e5eeddbc8fece7aeeab5.js.unityweb?638581302338048952",
+    codeUrl: buildUrl + "/caf60337db62ff1e0e42339267dec63d.wasm.unityweb?638581302338048952",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "Mirailabs",
     productName: "Waifu Tap",
@@ -48,7 +48,7 @@ var script = document.createElement("script");
 script.src = loaderUrl;
 script.onload = function () {
     createUnityInstance(canvas, config, function (progress) {
-        loadingBar.style.width = 100 * progress + "%";
+        loadingBar.style.width = 50 * progress + "%";
     }).then(function (unityInstance) {
         unityGame = unityInstance;
         // loadingContainer.classList.add("finished");
