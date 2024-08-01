@@ -1,9 +1,9 @@
 var buildUrl = "Build";
-var loaderUrl = buildUrl + "/development.loader.js?638580367919622222";
+var loaderUrl = buildUrl + "/development.loader.js?638581291058247579";
 var config = {
-    dataUrl: buildUrl + "/354c06e83c5992d7775a12ba9e49b97f.data.unityweb?638580367919622222",
-    frameworkUrl: buildUrl + "/e3990134963a217655419d7a99280482.js.unityweb?638580367919622222",
-    codeUrl: buildUrl + "/412adc410c9bf7d3bbdac32a516f69c6.wasm.unityweb?638580367919622222",
+    dataUrl: buildUrl + "/113bf5ed8f0a7f6f2ef71f972a905e9a.data.unityweb?638581291058247579",
+    frameworkUrl: buildUrl + "/875237142bb9769733898a0d48cc91f5.js.unityweb?638581291058247579",
+    codeUrl: buildUrl + "/26c2ae47aea3b5347c7bde87cc1b789a.wasm.unityweb?638581291058247579",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "Mirailabs",
     productName: "Waifu Tap",
@@ -41,6 +41,7 @@ else {
 var canvas = document.querySelector("#unity-canvas");
 var loadingContainer = document.querySelector("#unity-loading-container");
 var loadingBar = document.querySelector("#unity-loading-bar-inner");
+var loadingText = document.querySelector("#unity-loading-text");
 
 var unityGame;
 var script = document.createElement("script");
@@ -50,7 +51,7 @@ script.onload = function () {
         loadingBar.style.width = 100 * progress + "%";
     }).then(function (unityInstance) {
         unityGame = unityInstance;
-        loadingContainer.classList.add("finished");
+        // loadingContainer.classList.add("finished");
     }).catch(function (message) {
         alert(message);
     });
