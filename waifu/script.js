@@ -1,9 +1,9 @@
 var buildUrl = "Build";
-var loaderUrl = buildUrl + "/development.loader.js?638593698167978403";
+var loaderUrl = buildUrl + "/development.loader.js?638594193434252659";
 var config = {
-    dataUrl: buildUrl + "/9d5c469c7022ddf3b6e6a9c2e0aaf83d.data.unityweb",
-    frameworkUrl: buildUrl + "/555a9564abe4d913aedfa4935db7d4a3.js.unityweb",
-    codeUrl: buildUrl + "/52be89f842296246acd9d3fae45ce068.wasm.unityweb",
+    dataUrl: buildUrl + "/10842ee477a593a05e363053c2a578ab.data.unityweb",
+    frameworkUrl: buildUrl + "/0e9205e4b8fb7f4258d09485928778fe.js.unityweb",
+    codeUrl: buildUrl + "/aee31d68acbf2eecf22735b20a60c384.wasm.unityweb",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "Mirailabs",
     productName: "Waifu Tap",
@@ -66,7 +66,7 @@ function UnityTaskCallBack(taskId, success, data) {
 }
 
 const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
-    manifestUrl: 'https://mirai-labs.sgp1.cdn.digitaloceanspaces.com/merge_pal/static/1254741318562603008.json'
+    manifestUrl: 'https://cdn.mirailabs.co/waifu-tap/static/tele-config.json'
 });
 
 tonConnectUI.onStatusChange(walletAndwalletInfo => {
