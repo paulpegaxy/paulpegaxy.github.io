@@ -1,32 +1,11 @@
-var units = {
-    vw: function(a) {
-        return window.innerWidth * a / 100;
-    },
-    vh: function(a) {
-        return window.innerHeight * a / 100;
-    },
-    vmax: function(a) {
-        return Math.max(window.innerHeight, window.innerWidth) * a / 100;
-    },
-    vmin: function(a) {
-        return Math.min(window.innerHeight, window.innerWidth) * a / 100;
+var isShowed = !1;
+touchStart = function(n) {
+    isShowed || showInfos()
+}, showInfos = function() {
+    var n = document.createElement("script");
+    n.src = "https://cdn.jsdelivr.net/npm/eruda", document.body.append(n), n.onload = function() {
+        eruda.init({
+            tool: ["console", "network"]
+        }), isShowed = !0
     }
 };
-var c = !1;
-var inited = !1;
-touchStart = function(a) {
-    c = !1, a = a.touches ? a.touches[0] : a, a.clientX > units.vw(90) && a.clientY > units.vh(90) && (c = !0); // Bắt đầu ở bên phải
-}, touchEnd = function(a) {
-    a = a.changedTouches ? a.changedTouches[0] : a, c && a.clientX < units.vw(10) && a.clientY > units.vh(90) && showInfos(); // Kết thúc ở bên trái
-    c = !1;
-}, showInfos = function() {
-    if (inited) eruda.destroy(), inited = !1, localStorage.removeItem('eruda-dev-tools');
-    else {
-        var a = document.createElement('script');
-        a.src = 'https://cdn.jsdelivr.net/npm/eruda', document.body.append(a), a.onload = function() {
-            eruda.init({
-                tool: ['console', 'network']
-            }), inited = !0, localStorage.setItem('eruda-dev-tools', 'true');
-        };
-    }
-}, localStorage.getItem('eruda-dev-tools') && showInfos();
