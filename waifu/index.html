@@ -37,14 +37,14 @@
   <script>
     // Initialize Telegram Analytics SDK
     window.telegramAnalytics.init({
-    token: 'eyJhcHBfbmFtZSI6InBvY2tldF93YWlmdSIsImFwcF91cmwiOiJodHRwczovL3QubWUvcG9ja2V0d2FpZnVfYm90IiwiYXBwX2RvbWFpbiI6Imh0dHA6Ly9jbGllbnQucG9ja2V0d2FpZnUuaW8vIn0=!/nU+XnvxujLpBhgybnQb5OpnVIXQejz9OtUQ2/DEG9U=',
-    appName: 'pocket_waifu',
+      token: 'eyJhcHBfbmFtZSI6InBvY2tldF93YWlmdSIsImFwcF91cmwiOiJodHRwczovL3QubWUvcG9ja2V0d2FpZnVfYm90IiwiYXBwX2RvbWFpbiI6Imh0dHA6Ly9jbGllbnQucG9ja2V0d2FpZnUuaW8vIn0=!/nU+XnvxujLpBhgybnQb5OpnVIXQejz9OtUQ2/DEG9U=',
+      appName: 'pocket_waifu',
     });
 
     Telegram.WebApp.ready();
     Telegram.WebApp.expand();
     Telegram.WebApp.enableClosingConfirmation();
-    Telegram.WebApp.disableVerticalSwipes();
+    // Telegram.WebApp.disableVerticalSwipes();
 
     alert = function (message) { console.log(`ALERT ${message}`); };
 
