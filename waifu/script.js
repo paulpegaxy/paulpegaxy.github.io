@@ -1,14 +1,14 @@
 var buildUrl = "Build";
-var loaderUrl = buildUrl + "/development.loader.js?638636537126056051";
+var loaderUrl = buildUrl + "/development.loader.js?638638921570453178";
 var config = {
-    dataUrl: buildUrl + "/3cde73d8ed9676de02c7f525140d980f.data.unityweb",
-    frameworkUrl: buildUrl + "/ff18c19a257ed5e1b793ccba0ed13e9a.js.unityweb",
-    codeUrl: buildUrl + "/3b9b5b67a503641e8c1a6e700edb8f3d.wasm.unityweb",
-    symbolsUrl: buildUrl + "/4cbf60051348b7607800ccb139724e14.json.unityweb",
+    dataUrl: buildUrl + "/720895b98f2de40922485fd61d1db00b.data.unityweb",
+    frameworkUrl: buildUrl + "/e7337b0c9c9fcbc4724fa2a6d0244796.js.unityweb",
+    codeUrl: buildUrl + "/38b2db9dfa2e2b1cbcee44f373d72d5e.wasm.unityweb",
+    symbolsUrl: buildUrl + "/0108fb34f48b301c1af91521663610c1.json.unityweb",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "Mirailabs",
     productName: "Waifu Tap",
-    productVersion: "1.0.0",
+    productVersion: "1.0.1",
 
     cacheControl: function (url) {
         // Caching enabled for .data and .bundle files.
