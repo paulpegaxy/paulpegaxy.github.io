@@ -21,7 +21,7 @@
     <div id="unity-loading-text">The first load may take longer</div>
     <div id="unity-loading-version" ontouchstart="touchStart(event)">v1.0.2</div>
   </div>
-  <script src="debug.js?638644989772121036"></script>
+  <script src="debug.js?638646107774452213"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-7YXRJ2WSVP"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -47,12 +47,21 @@
     Telegram.WebApp.disableVerticalSwipes();
 
     alert = function (message) { console.log(`ALERT ${message}`); };
-
   </script>
+  
+  <script>
+    const container = document.querySelector('#unity-loading-container');
+    if (container) {
+      const splashBgIndex = Math.floor(Math.random() * 3) + 1;
+      console.log('index: ',splashBgIndex);
+      container.style.backgroundImage = `url('splash${splashBgIndex}.webp')`;
+    }
+  </script>
+  
   <script src="https://unpkg.com/tonweb@0.0.41/dist/tonweb.js"></script>
   <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
   <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
-  <script src="script.js?638644989772121036"></script>
+  <script src="script.js?638646107774452213"></script>
 </body>
 
 </html>
