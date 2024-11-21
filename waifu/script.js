@@ -1,10 +1,10 @@
 var buildUrl = "Build";
-var loaderUrl = buildUrl + "/development.loader.js?638676243230561599";
+var loaderUrl = buildUrl + "/development.loader.js?638677846421881996";
 var config = {
-    dataUrl: buildUrl + "/99d3804f8788b9bcbd7f4e89467db01f.data.unityweb",
-    frameworkUrl: buildUrl + "/c90cc62f342390d553ece579d3cbf122.js.unityweb",
-    codeUrl: buildUrl + "/3261353d651d07fe558a87ca9465056b.wasm.unityweb",
-    symbolsUrl: buildUrl + "/468d0f6f15857d95560ae68daffe2997.json.unityweb",
+    dataUrl: buildUrl + "/ce13c617c05d80e069c54a8ea0cc9bc5.data.unityweb",
+    frameworkUrl: buildUrl + "/37ea9d9e6632aad51a6f1ddb831b64c3.js.unityweb",
+    codeUrl: buildUrl + "/2e78c03f514865d44c01af81cbd5b492.wasm.unityweb",
+    symbolsUrl: buildUrl + "/f5e6816080bb9c72ae3232d872de9fda.json.unityweb",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "Mirailabs",
     productName: "Waifu Tap",
