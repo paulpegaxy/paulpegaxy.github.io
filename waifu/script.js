@@ -1,10 +1,10 @@
 var buildUrl = "Build";
-var loaderUrl = buildUrl + "/development.loader.js?638681509019155934";
+var loaderUrl = buildUrl + "/development.loader.js?638681525877075818";
 var config = {
-    dataUrl: buildUrl + "/00d28d7a817bfa446e99faad0366f305.data.unityweb",
-    frameworkUrl: buildUrl + "/2ee402f47afd4f3fac38665f7fa446eb.js.unityweb",
-    codeUrl: buildUrl + "/598a1e72d386a089432b681f2f4a945f.wasm.unityweb",
-    symbolsUrl: buildUrl + "/6a9a6d51c437a6e49c84ba2081675c9c.json.unityweb",
+    dataUrl: buildUrl + "/dcf48643372e4dfbfd84f3f340efd4db.data.unityweb",
+    frameworkUrl: buildUrl + "/22da774bfe047c48192687e30f09f96b.js.unityweb",
+    codeUrl: buildUrl + "/a07ea55ba79eb1ef5af1fdbbc1782939.wasm.unityweb",
+    symbolsUrl: buildUrl + "/cdafe618271c915d9a41a910ffc028b3.json.unityweb",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "Mirailabs",
     productName: "Waifu Tap",
@@ -72,9 +72,9 @@ const miraiWallet = {
     imageUrl: "https://cdn.mirailabs.co/miraihub/miraiapp-tg-icon-288.png",
     aboutUrl: "https://mirai.app",
     // #if PRODUCTION_BUILD == 1
-    // universalLink: "https://t.me/MiraiAppBot/app",
+    universalLink: "https://t.me/MiraiAppBot/app",
     // #else
-    universalLink: "https://t.me/mirai_app_dev_bot/MiraiWallet",
+    // universalLink: "https://t.me/mirai_app_dev_bot/MiraiWallet",
     // #endif
     bridgeUrl: "https://bridge.tonapi.io/bridge",
     platforms: ["ios", "android", "macos", "windows", "linux"],
