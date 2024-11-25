@@ -1,10 +1,10 @@
 var buildUrl = "Build";
-var loaderUrl = buildUrl + "/development.loader.js?638677846421881996";
+var loaderUrl = buildUrl + "/development.loader.js?638681307224090221";
 var config = {
-    dataUrl: buildUrl + "/ce13c617c05d80e069c54a8ea0cc9bc5.data.unityweb",
-    frameworkUrl: buildUrl + "/37ea9d9e6632aad51a6f1ddb831b64c3.js.unityweb",
-    codeUrl: buildUrl + "/2e78c03f514865d44c01af81cbd5b492.wasm.unityweb",
-    symbolsUrl: buildUrl + "/f5e6816080bb9c72ae3232d872de9fda.json.unityweb",
+    dataUrl: buildUrl + "/cd14af7540a37213a1fc74b4f7b28351.data.unityweb",
+    frameworkUrl: buildUrl + "/dff221f9e33bbab15eea3a0cc2da7235.js.unityweb",
+    codeUrl: buildUrl + "/2b5dcd69454a8fc6766ae83d2aab53e0.wasm.unityweb",
+    symbolsUrl: buildUrl + "/e9a365c633af8aa538c2677280f34e21.json.unityweb",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "Mirailabs",
     productName: "Waifu Tap",
@@ -66,8 +66,25 @@ function UnityTaskCallBack(taskId, success, data) {
     }));
 }
 
+const miraiWallet = {
+    appName: "miraiapp-tg",
+    name: "Mirai App",
+    imageUrl: "https://cdn.mirailabs.co/miraihub/miraiapp-tg-icon-288.png",
+    aboutUrl: "https://mirai.app",
+    // #if PRODUCTION_BUILD == 1
+    // universalLink: "https://t.me/MiraiAppBot/app",
+    // #else
+    universalLink: "https://t.me/mirai_app_dev_bot/MiraiWallet",
+    // #endif
+    bridgeUrl: "https://bridge.tonapi.io/bridge",
+    platforms: ["ios", "android", "macos", "windows", "linux"],
+}
+
 const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
-    manifestUrl: 'https://cdn.mirailabs.co/waifu-tap/static/tele-config.json'
+    manifestUrl: 'https://cdn.mirailabs.co/waifu-tap/static/tele-config.json',
+    walletsListConfiguration: {
+        includeWallets: [miraiWallet]
+    }
 });
 
 tonConnectUI.onStatusChange(walletAndwalletInfo => {
