@@ -1,9 +1,9 @@
 var buildUrl = "Build";
-var loaderUrl = buildUrl + "/development.loader.js?638681525877075818";
+var loaderUrl = buildUrl + "/development.loader.js?638683001754469688";
 var config = {
-    dataUrl: buildUrl + "/dcf48643372e4dfbfd84f3f340efd4db.data.unityweb",
+    dataUrl: buildUrl + "/89a4cd7bc617236baf54a6e495e3bed8.data.unityweb",
     frameworkUrl: buildUrl + "/22da774bfe047c48192687e30f09f96b.js.unityweb",
-    codeUrl: buildUrl + "/a07ea55ba79eb1ef5af1fdbbc1782939.wasm.unityweb",
+    codeUrl: buildUrl + "/bc822b67baa14b2f2db776b52c7630b2.wasm.unityweb",
     symbolsUrl: buildUrl + "/cdafe618271c915d9a41a910ffc028b3.json.unityweb",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "Mirailabs",
@@ -72,9 +72,9 @@ const miraiWallet = {
     imageUrl: "https://cdn.mirailabs.co/miraihub/miraiapp-tg-icon-288.png",
     aboutUrl: "https://mirai.app",
     // #if PRODUCTION_BUILD == 1
-    universalLink: "https://t.me/MiraiAppBot/app",
+    // universalLink: "https://t.me/MiraiAppBot/app",
     // #else
-    // universalLink: "https://t.me/mirai_app_dev_bot/MiraiWallet",
+    universalLink: "https://t.me/mirai_app_dev_bot/MiraiWallet",
     // #endif
     bridgeUrl: "https://bridge.tonapi.io/bridge",
     platforms: ["ios", "android", "macos", "windows", "linux"],
