@@ -1,10 +1,10 @@
 var buildUrl = "Build";
-var loaderUrl = buildUrl + "/development.loader.js?638696378394664334";
+var loaderUrl = buildUrl + "/development.loader.js?638696400777406948";
 var config = {
-    dataUrl: buildUrl + "/7add1b6d94380942d92d74006630113b.data.unityweb",
-    frameworkUrl: buildUrl + "/b426916e004e18596d1b2c37586914b6.js.unityweb",
-    codeUrl: buildUrl + "/f283bad438615cc50506b0695dc73a34.wasm.unityweb",
-    symbolsUrl: buildUrl + "/d9b076e1aa4a76646b78f7b84d62c6bd.json.unityweb",
+    dataUrl: buildUrl + "/f621af03d0170444260cf5ce6108c4cb.data.unityweb",
+    frameworkUrl: buildUrl + "/71e55e7b8db7d2e289c0740bc6cf1d86.js.unityweb",
+    codeUrl: buildUrl + "/9001622487a2faa3bc20fc66c2d8ae2e.wasm.unityweb",
+    symbolsUrl: buildUrl + "/ae84791feb3973c776ed6dac48f14e96.json.unityweb",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "Mirailabs",
     productName: "Partnr",
@@ -133,8 +133,8 @@ const setupTimeout = (time, action) => {
 
 document.body.addEventListener("focusout", function () {
     const body = document.getElementById("main-body")
-    body.style.marginTop = "200px"
     console.log("Focus out event triggered"); // Log statement
+    body.style.marginTop = "200px"
     if (!body) { return }
     setupTimeout(150, () => {
         body.style.marginTop = "0px"
