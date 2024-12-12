@@ -1,10 +1,10 @@
 var buildUrl = "Build";
-var loaderUrl = buildUrl + "/development.loader.js?638696474515144001";
+var loaderUrl = buildUrl + "/development.loader.js?638696496104025503";
 var config = {
-    dataUrl: buildUrl + "/3172deddc629a845b7f0abf3704999a4.data.unityweb",
-    frameworkUrl: buildUrl + "/23d7f0212184a0635e6fa1ab31b36b9c.js.unityweb",
-    codeUrl: buildUrl + "/9ea1b75e6523e04851a7712b99db1c74.wasm.unityweb",
-    symbolsUrl: buildUrl + "/90c2f59f61a9ae95ab484f53d0cf2f20.json.unityweb",
+    dataUrl: buildUrl + "/3da18dc0b389ec7be89466b180c05a2e.data.unityweb",
+    frameworkUrl: buildUrl + "/a663efff1f5e54ab965bd88bc938c5a5.js.unityweb",
+    codeUrl: buildUrl + "/53d029e0716b888832aed41df3b07c80.wasm.unityweb",
+    symbolsUrl: buildUrl + "/efb4ce3483709cc33649b948acdf6930.json.unityweb",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "Mirailabs",
     productName: "Partnr",
@@ -148,17 +148,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let originalHeight = window.innerHeight;
   
-    window.addEventListener("focus", () => {
+    window.addEventListener("touchend", () => {
         const currentHeight = window.innerHeight;
-        setupTimeout(50, () => {
-            // Kiểm tra nếu chiều cao bị giảm (bàn phím xuất hiện)
-            if (currentHeight < originalHeight) {
-                const keyboardHeight = originalHeight - currentHeight;
+        if (currentHeight < originalHeight) {
+            const keyboardHeight = originalHeight - currentHeight;
 
-                // Di chuyển input field sát với bàn phím
-                inputHandler.style.top = `${currentHeight - keyboardHeight - inputHandler.offsetHeight}px`;
-            }
-        })
+            // Di chuyển input field sát với bàn phím
+            inputHandler.style.top = `${currentHeight - keyboardHeight - inputHandler.offsetHeight}px`;
+        }
         
         // else {
         //     // Khôi phục vị trí ban đầu khi bàn phím đóng
