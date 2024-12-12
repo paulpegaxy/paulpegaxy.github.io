@@ -1,9 +1,9 @@
 var buildUrl = "Build";
-var loaderUrl = buildUrl + "/development.loader.js?638696454585834473";
+var loaderUrl = buildUrl + "/development.loader.js?638696474515144001";
 var config = {
-    dataUrl: buildUrl + "/4d7cfb52dc666865765b3b4620bef9ca.data.unityweb",
+    dataUrl: buildUrl + "/3172deddc629a845b7f0abf3704999a4.data.unityweb",
     frameworkUrl: buildUrl + "/23d7f0212184a0635e6fa1ab31b36b9c.js.unityweb",
-    codeUrl: buildUrl + "/2addcbb52cd476b26b6a8b2b6a98e77c.wasm.unityweb",
+    codeUrl: buildUrl + "/9ea1b75e6523e04851a7712b99db1c74.wasm.unityweb",
     symbolsUrl: buildUrl + "/90c2f59f61a9ae95ab484f53d0cf2f20.json.unityweb",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "Mirailabs",
@@ -133,10 +133,36 @@ const setupTimeout = (time, action) => {
 
 document.body.addEventListener("focusout", function () {
     const body = document.getElementById("main-body")
+
     console.log("Focus out event triggered"); // Log statement
     body.style.marginTop = "200px"
     if (!body) { return }
     setupTimeout(150, () => {
         body.style.marginTop = "0px"
     })
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const inputHolder = document.querySelector(".input-holder");
+    const inputHandler = document.querySelector(".input-handler");
+
+    let originalHeight = window.innerHeight;
+  
+    window.addEventListener("focus", () => {
+        const currentHeight = window.innerHeight;
+        setupTimeout(50, () => {
+            // Kiểm tra nếu chiều cao bị giảm (bàn phím xuất hiện)
+            if (currentHeight < originalHeight) {
+                const keyboardHeight = originalHeight - currentHeight;
+
+                // Di chuyển input field sát với bàn phím
+                inputHandler.style.top = `${currentHeight - keyboardHeight - inputHandler.offsetHeight}px`;
+            }
+        })
+        
+        // else {
+        //     // Khôi phục vị trí ban đầu khi bàn phím đóng
+        //     inputHandler.style.top = "60%";
+        // }
+    });
 });
