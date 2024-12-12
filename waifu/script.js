@@ -1,10 +1,10 @@
 var buildUrl = "Build";
-var loaderUrl = buildUrl + "/development.loader.js?638690171015162733";
+var loaderUrl = buildUrl + "/development.loader.js?638695975288424537";
 var config = {
-    dataUrl: buildUrl + "/db458aebc230866d3c35ed11c66d21e5.data.unityweb",
-    frameworkUrl: buildUrl + "/7b163f384dcb5033c6d87199a0ea82f1.js.unityweb",
-    codeUrl: buildUrl + "/9d24c7f954de09d8cdf3ce4d17da695e.wasm.unityweb",
-    symbolsUrl: buildUrl + "/bff541d4fb3899c4028aa018a8c56bc7.json.unityweb",
+    dataUrl: buildUrl + "/585c3cb494e8d3a3cf266202f1bbdbdb.data.unityweb",
+    frameworkUrl: buildUrl + "/db7e2b2cbbaf5d306770e3bf5146e803.js.unityweb",
+    codeUrl: buildUrl + "/e83c0558f076bdb58d8eac2a5deeb18e.wasm.unityweb",
+    symbolsUrl: buildUrl + "/8cf44a654eb4775be51daba1d32e7a99.json.unityweb",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "Mirailabs",
     productName: "Waifu Tap",
@@ -96,4 +96,46 @@ tonConnectUI.connectionRestored.then(restored => {
     } else {
         console.log('Connection was not restored.');
     }
+});
+
+const resetView = {
+    reset: () => {
+        console.log("do reset")
+        this.timeoutId = undefined
+    },
+    cancel: () => {
+        clearTimeout(this.timeoutId)
+    },
+    setup: (time, action) => {
+        if (typeof this.timeoutId === "number") {
+            this.cancel()
+        }
+
+        this.timeoutId = setTimeout(() => {
+            action()
+        }, time);
+    },
+}
+
+let timeoutId = undefined
+const cancelTimeout = () => {
+    if (!timeoutId) { return }
+    clearTimeout(timeoutId)
+    timeoutId = undefined
+}
+
+const setupTimeout = (time, action) => {
+    cancelTimeout()
+    timeoutId = setTimeout(() => {
+        action()
+    }, time);
+}
+
+document.body.addEventListener("focusout", function () {
+    const body = document.getElementById("main-body")
+    body.style.marginTop = "100px"
+    if (!body) { return }
+    setupTimeout(100, () => {
+        body.style.marginTop = "0px"
+    })
 });
