@@ -131,17 +131,17 @@ const setupTimeout = (time, action) => {
     }, time);
 }
 
-// document.body.addEventListener("focusout", function () {
-//     // const body = document.getElementById("main-body")
-//     const body = document.querySelector("#main-body")
+document.addEventListener("focusout", function () {
+    // const body = document.getElementById("main-body")
+    const body = document.querySelector("#main-body")
 
-//     console.log("Focus out event triggered"); // Log statement
-//     body.style.marginTop = "100px"
-//     if (!body) { return }
-//     setupTimeout(100, () => {
-//         body.style.marginTop = "0px"
-//     })
-// });
+    console.log("Focus out event triggered"); // Log statement
+    body.style.marginTop = "100px"
+    if (!body) { return }
+    setupTimeout(100, () => {
+        body.style.marginTop = "0px"
+    })
+});
 
 visualViewport.addEventListener('resize',
     () => {
