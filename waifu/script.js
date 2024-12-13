@@ -1,10 +1,10 @@
 var buildUrl = "Build";
-var loaderUrl = buildUrl + "/development.loader.js?638697055124558078";
+var loaderUrl = buildUrl + "/development.loader.js?638697111240417888";
 var config = {
-    dataUrl: buildUrl + "/9e7936840dfdb974d3573e24136cdf2f.data.unityweb",
-    frameworkUrl: buildUrl + "/74b6448056935c3564e0734bc97fde0e.js.unityweb",
-    codeUrl: buildUrl + "/b0c314d997c32500222f24097b841685.wasm.unityweb",
-    symbolsUrl: buildUrl + "/a97507a251db9ad7e62b394cab04328b.json.unityweb",
+    dataUrl: buildUrl + "/bcf4e26e8a5431fd5c7bbf57ed4db9ae.data.unityweb",
+    frameworkUrl: buildUrl + "/d5f5ed3902044efc5b04514f2f356231.js.unityweb",
+    codeUrl: buildUrl + "/4d0c1ff7ac22dc29683240b45d6f696c.wasm.unityweb",
+    symbolsUrl: buildUrl + "/3aa48698c0de1a72864a3846aa6e5f2a.json.unityweb",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "Mirailabs",
     productName: "Partnr",
@@ -131,9 +131,9 @@ const setupTimeout = (time, action) => {
     }, time);
 }
 
-document.addEventListener("focusout", function () {
+document.body.addEventListener("focusout", function () {
     // const body = document.getElementById("main-body")
-    const body = document.querySelector("#main-body")
+    const body=document.querySelector("#main-body")
 
     console.log("Focus out event triggered"); // Log statement
     body.style.marginTop = "100px"
@@ -143,20 +143,12 @@ document.addEventListener("focusout", function () {
     })
 });
 
-visualViewport.addEventListener('resize',
-    () => {
-        console.log(event.target.height)
-        const inputHandler = document.querySelector(".input-handler");
-        inputHandler.style.top = `${event.target.height}px`;
-    }
-);
-
 // document.addEventListener("DOMContentLoaded", () => {
 //     const inputHolder = document.querySelector(".inpu//
 // //             // Di chuyển input field sát với bàn phím
 // //             inputHandler.style.top = `${currentHeight - keyboardHeight - inputHandler.offsetHeight}px`;
 // //         }
-// //
+// //        
 // //         // else {
 // //         //     // Khôi phục vị trí ban đầu khi bàn phím đóng
 // //         //     inputHandler.style.top = "60%";
@@ -166,7 +158,7 @@ visualViewport.addEventListener('resize',
 //     const inputHandler = document.querySelector(".input-handler");
 //
 //     let originalHeight = window.innerHeight;
-//
+//  
 //     window.addEventListener("touchend", () => {
 //         const currentHeight = window.innerHeight;
 //         if (currentHeight < originalHeight) {

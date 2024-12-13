@@ -4,4 +4,7 @@ window.addEventListener('load', () => {
     const parentHeight = parent.offsetHeight
     child.style.height = `${parentHeight}px`
     console.log('on page load')
+    // const screenHeight=screen.height;
+    // const body=document.querySelector("#main-body")
+    // body.style.height=`${screenHeight}px`;
 });
