@@ -1,0 +1,169 @@
+@font-face {
+    font-family: Glory;
+    src: url('Glory-ExtraBold.ttf');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    /* fix mobile viewport menu bar on iOS */
+    height: -webkit-fill-available;
+}
+
+body {
+    height: 100%;
+    /* fix mobile viewport menu bar on iOS */
+    height: -webkit-fill-available;
+    width: 100%;
+    text-align: center;
+}
+
+#unity-container {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+/* Default values, might be overwritten by aspect ratio media queries */
+#unity-canvas {
+    width: 100%;
+    background-color: #fff;
+}
+
+#unity-loading-container {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #19191c;
+    background-position: center;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+}
+
+#unity-loading-container.finished {
+    opacity: 0;
+    visibility: collapse;
+}
+
+#unity-loading-logo {
+    position: absolute;
+    /*top: 10px;*/
+    /*left: 10px;*/
+    width: 60%;
+    /*background-image: url('logo.webp');*/
+    /*background-position: center;*/
+    /*background-size: cover;*/
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+
+#unity-loading-bg {
+    position: absolute;
+    width: 95%;
+    height: 18px;
+    bottom: 10px;
+    background-color: #0008;
+    border: 3px solid #0000;
+    border-radius: 8px;
+}
+
+#unity-loading-fg {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background-color: #e8c735;
+    border-radius: 4px;
+    transition: 400ms linear;
+}
+
+#unity-loading-text {
+    position: absolute;
+    left: 10%;
+    bottom: 45px;
+    color: #e8c735;
+    /*font: 16px 'Museo Sans Rounded', 'Roboto';*/
+    font-family: Glory;
+    font-size: 16px;
+    /*text-shadow:*/
+    /*    -1px -1px 0 #fff,*/
+    /*    1px -1px 0 #fff,*/
+    /*    -1px 1px 0 #fff,*/
+    /*    1px 1px 0 #fff;*/
+}
+
+#unity-loading-version {
+    position: absolute;
+    right: 10%;
+    bottom: 45px;
+    color: #e8c735;
+    /*font: 16px 'Museo Sans Rounded', 'Roboto';*/
+    font-family: Glory;
+    font-size: 16px;
+    /*text-shadow:*/
+    /*    -1px -1px 0 #fff,*/
+    /*    1px -1px 0 #fff,*/
+    /*    -1px 1px 0 #fff,*/
+    /*    1px 1px 0 #fff;*/
+}
+
+.input-holder {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    bottom: 25%;
+    transform: translateY(25%);
+    transition: bottom 0.3s ease; /* Smooth transition effect */
+}
+
+.input-handler {
+    position: absolute;
+    height: 1.5em;
+    font-size: 18px;
+    font-family: Glory;
+    touch-action: none;
+}
+
+.input-handler.android {
+    bottom: 0;
+}
+
+.input-handler.ios {
+    top: 60%;
+}
+
+.mobile-input {
+    width: 100%;
+    left: 0px;
+}
+
+.desktop-input {
+    width: 90%;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.multiline-input {
+    height: 60px;
+}
