@@ -1,14 +1,14 @@
 var buildUrl = "Build";
-var loaderUrl = buildUrl + "/development.loader.js?638697007788231377";
+var loaderUrl = buildUrl + "/development.loader.js?638697055124558078";
 var config = {
-    dataUrl: buildUrl + "/2e01f17735f355e9310d9e376f7fcb1e.data.unityweb",
-    frameworkUrl: buildUrl + "/dc7cd322aca25ae8256b5d3b9b327704.js.unityweb",
-    codeUrl: buildUrl + "/f2702b4d31aa3393d26f7fd74c21976b.wasm.unityweb",
-    symbolsUrl: buildUrl + "/e12c223c510672476f988ea59ee515c0.json.unityweb",
+    dataUrl: buildUrl + "/9e7936840dfdb974d3573e24136cdf2f.data.unityweb",
+    frameworkUrl: buildUrl + "/74b6448056935c3564e0734bc97fde0e.js.unityweb",
+    codeUrl: buildUrl + "/b0c314d997c32500222f24097b841685.wasm.unityweb",
+    symbolsUrl: buildUrl + "/a97507a251db9ad7e62b394cab04328b.json.unityweb",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "Mirailabs",
     productName: "Partnr",
-    productVersion: "1.0.11",
+    productVersion: "1.0.0",
 
     cacheControl: function (url) {
         // Caching enabled for .data and .bundle files.
@@ -143,8 +143,26 @@ document.body.addEventListener("focusout", function () {
     })
 });
 
+visualViewport.addEventListener('resize', 
+    () => {
+        console.log(event.target.height)
+        const inputHandler = document.querySelector(".input-handler");
+        inputHandler.style.top = `${event.target.height}px`;
+    }
+);
+
 // document.addEventListener("DOMContentLoaded", () => {
-//     const inputHolder = document.querySelector(".input-holder");
+//     const inputHolder = document.querySelector(".inpu//
+// //             // Di chuyển input field sát với bàn phím
+// //             inputHandler.style.top = `${currentHeight - keyboardHeight - inputHandler.offsetHeight}px`;
+// //         }
+// //        
+// //         // else {
+// //         //     // Khôi phục vị trí ban đầu khi bàn phím đóng
+// //         //     inputHandler.style.top = "60%";
+// //         // }
+// //     });
+// // });t-holder");
 //     const inputHandler = document.querySelector(".input-handler");
 //
 //     let originalHeight = window.innerHeight;
@@ -153,14 +171,3 @@ document.body.addEventListener("focusout", function () {
 //         const currentHeight = window.innerHeight;
 //         if (currentHeight < originalHeight) {
 //             const keyboardHeight = originalHeight - currentHeight;
-//
-//             // Di chuyển input field sát với bàn phím
-//             inputHandler.style.top = `${currentHeight - keyboardHeight - inputHandler.offsetHeight}px`;
-//         }
-//        
-//         // else {
-//         //     // Khôi phục vị trí ban đầu khi bàn phím đóng
-//         //     inputHandler.style.top = "60%";
-//         // }
-//     });
-// });
