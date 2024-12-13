@@ -1,10 +1,10 @@
 var buildUrl = "Build";
-var loaderUrl = buildUrl + "/development.loader.js?638696526655276212";
+var loaderUrl = buildUrl + "/development.loader.js?638696853539993089";
 var config = {
-    dataUrl: buildUrl + "/f1fb7cce421ca422057fe07322faf118.data.unityweb",
-    frameworkUrl: buildUrl + "/c16442e9c2d2f990e9698a3cda7973e2.js.unityweb",
-    codeUrl: buildUrl + "/055c2bc278c1fca0e8c04c5d52b24396.wasm.unityweb",
-    symbolsUrl: buildUrl + "/d40d6af1a7dce45f9e801cf9dbadc91d.json.unityweb",
+    dataUrl: buildUrl + "/1847cdf43799d6b5b53f30bed34595f6.data.unityweb",
+    frameworkUrl: buildUrl + "/04289db2cec363a325eb9c66c4c511c0.js.unityweb",
+    codeUrl: buildUrl + "/1400d6a29e1bef2d8c009f19410021b8.wasm.unityweb",
+    symbolsUrl: buildUrl + "/b67108bbcf111b6f49689643a5db8c51.json.unityweb",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "Mirailabs",
     productName: "Partnr",
@@ -132,34 +132,35 @@ const setupTimeout = (time, action) => {
 }
 
 document.body.addEventListener("focusout", function () {
-    const body = document.getElementById("main-body")
+    // const body = document.getElementById("main-body")
+    const body=document.querySelector("#main-body")
 
     console.log("Focus out event triggered"); // Log statement
-    body.style.marginTop = "200px"
+    body.style.marginTop = "100px"
     if (!body) { return }
-    setupTimeout(150, () => {
+    setupTimeout(100, () => {
         body.style.marginTop = "0px"
     })
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const inputHolder = document.querySelector(".input-holder");
-    const inputHandler = document.querySelector(".input-handler");
-
-    let originalHeight = window.innerHeight;
-  
-    window.addEventListener("touchend", () => {
-        const currentHeight = window.innerHeight;
-        if (currentHeight < originalHeight) {
-            const keyboardHeight = originalHeight - currentHeight;
-
-            // Di chuyển input field sát với bàn phím
-            inputHandler.style.top = `${currentHeight - keyboardHeight - inputHandler.offsetHeight}px`;
-        }
-        
-        // else {
-        //     // Khôi phục vị trí ban đầu khi bàn phím đóng
-        //     inputHandler.style.top = "60%";
-        // }
-    });
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//     const inputHolder = document.querySelector(".input-holder");
+//     const inputHandler = document.querySelector(".input-handler");
+//
+//     let originalHeight = window.innerHeight;
+//  
+//     window.addEventListener("touchend", () => {
+//         const currentHeight = window.innerHeight;
+//         if (currentHeight < originalHeight) {
+//             const keyboardHeight = originalHeight - currentHeight;
+//
+//             // Di chuyển input field sát với bàn phím
+//             inputHandler.style.top = `${currentHeight - keyboardHeight - inputHandler.offsetHeight}px`;
+//         }
+//        
+//         // else {
+//         //     // Khôi phục vị trí ban đầu khi bàn phím đóng
+//         //     inputHandler.style.top = "60%";
+//         // }
+//     });
+// });
