@@ -131,32 +131,32 @@ const setupTimeout = (time, action) => {
     }, time);
 }
 
-document.body.addEventListener("focusout", function () {
-    // const body = document.getElementById("main-body")
-    const body=document.querySelector("#main-body")
+// document.body.addEventListener("focusout", function () {
+//     // const body = document.getElementById("main-body")
+//     const body = document.querySelector("#main-body")
 
-    console.log("Focus out event triggered"); // Log statement
-    body.style.marginTop = "100px"
-    if (!body) { return }
-    setupTimeout(100, () => {
-        body.style.marginTop = "0px"
-    })
-});
+//     console.log("Focus out event triggered"); // Log statement
+//     body.style.marginTop = "100px"
+//     if (!body) { return }
+//     setupTimeout(100, () => {
+//         body.style.marginTop = "0px"
+//     })
+// });
 
-visualViewport.addEventListener('resize', 
-    () => {
-        console.log(event.target.height)
-        const inputHandler = document.querySelector(".input-handler");
-        inputHandler.style.top = `${event.target.height}px`;
-    }
-);
+// visualViewport.addEventListener('resize',
+//     () => {
+//         console.log(event.target.height)
+//         const inputHandler = document.querySelector(".input-handler");
+//         inputHandler.style.top = `${event.target.height}px`;
+//     }
+// );
 
 // document.addEventListener("DOMContentLoaded", () => {
 //     const inputHolder = document.querySelector(".inpu//
 // //             // Di chuyển input field sát với bàn phím
 // //             inputHandler.style.top = `${currentHeight - keyboardHeight - inputHandler.offsetHeight}px`;
 // //         }
-// //        
+// //
 // //         // else {
 // //         //     // Khôi phục vị trí ban đầu khi bàn phím đóng
 // //         //     inputHandler.style.top = "60%";
@@ -166,7 +166,7 @@ visualViewport.addEventListener('resize',
 //     const inputHandler = document.querySelector(".input-handler");
 //
 //     let originalHeight = window.innerHeight;
-//  
+//
 //     window.addEventListener("touchend", () => {
 //         const currentHeight = window.innerHeight;
 //         if (currentHeight < originalHeight) {
