@@ -143,13 +143,13 @@ const setupTimeout = (time, action) => {
 //     })
 // });
 
-// visualViewport.addEventListener('resize',
-//     () => {
-//         console.log(event.target.height)
-//         const inputHandler = document.querySelector(".input-handler");
-//         inputHandler.style.top = `${event.target.height}px`;
-//     }
-// );
+visualViewport.addEventListener('resize',
+    () => {
+        console.log(event.target.height)
+        const inputHandler = document.querySelector(".input-handler");
+        inputHandler.style.top = `${event.target.height}px`;
+    }
+);
 
 // document.addEventListener("DOMContentLoaded", () => {
 //     const inputHolder = document.querySelector(".inpu//
