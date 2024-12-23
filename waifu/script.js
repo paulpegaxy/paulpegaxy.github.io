@@ -1,10 +1,10 @@
 var buildUrl = "Build";
-var loaderUrl = buildUrl + "/development.loader.js?638705607647728699";
+var loaderUrl = buildUrl + "/development.loader.js?638705674193429143";
 var config = {
-    dataUrl: buildUrl + "/5605e5f12e75e1c4bee7089324b16bda.data.unityweb",
+    dataUrl: buildUrl + "/8f326684ece3e248736cfc1b4d4346f8.data.unityweb",
     frameworkUrl: buildUrl + "/78c1660a5e8b3ebaaf3b176eedf0d5f0.js.unityweb",
-    codeUrl: buildUrl + "/708cf25a9a3e8215086aa69cbc8c6653.wasm.unityweb",
-    symbolsUrl: buildUrl + "/31ac2afc25eb943db5ddccd03790803f.json.unityweb",
+    codeUrl: buildUrl + "/3d0f5902036a521241ba5ff6181b5a49.wasm.unityweb",
+    symbolsUrl: buildUrl + "/a3946f0dae5902b0319c4328c8d8f1ab.json.unityweb",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "Mirailabs",
     productName: "Partnr",
